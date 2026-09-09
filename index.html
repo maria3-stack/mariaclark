@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Jane Clark | Author visibility Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --ink: #13111C;
+            --night: #1A1726;
+            --night-mid: #241F32;
+            --charcoal: #2E2940;
+            --linen: #FBF9F4;
+            --cream: #F6F2EB;
+            --sand: #EDE8DE;
+            --warmth: #F9F6F0;
+            --gold: #C49A42;
+            --gold-bright: #D4AB52;
+            --gold-light: #DCBA68;
+            --gold-pale: #F0E3BC;
+            --gold-glow: rgba(196, 154, 66, 0.12);
+            --copper: #C08772;
+            --rose-mist: #D4A0A8;
+            --sage: #8BA088;
+            --text-ink: #1E1C24;
+            --text-body: #504A5E;
+            --text-quiet: #8E889F;
+            --white: #FFFFFF;
+            --border-whisper: rgba(0,0,0,0.04);
+            --border-faint: rgba(196, 154, 66, 0.08);
+            --border-soft: rgba(196, 154, 66, 0.15);
+            --border-visible: rgba(196, 154, 66, 0.28);
+            --grad-hero: linear-gradient(155deg, #0F0E16 0%, #1A1726 35%, #241F32 65%, #1A1726 100%);
+            --grad-dark: linear-gradient(160deg, #13111C 0%, #1C1928 50%, #13111C 100%);
+            --grad-gold: linear-gradient(135deg, #C49A42 0%, #DCBA68 50%, #C49A42 100%);
+            --grad-gold-hover: linear-gradient(135deg, #D4AB52 0%, #E8CB78 50%, #D4AB52 100%);
+            --sh-xs: 0 1px 4px rgba(0,0,0,0.03);
+            --sh-sm: 0 4px 16px rgba(0,0,0,0.05);
+            --sh-md: 0 10px 35px rgba(0,0,0,0.07);
+            --sh-lg: 0 20px 60px rgba(0,0,0,0.09);
+            --sh-xl: 0 35px 80px rgba(0,0,0,0.12);
+            --sh-gold: 0 8px 30px rgba(196, 154, 66, 0.18);
+            --sh-gold-lg: 0 14px 45px rgba(196, 154, 66, 0.28);
+            --r-xs: 6px;
+            --r-sm: 10px;
+            --r-md: 16px;
+            --r-lg: 24px;
+            --r-xl: 32px;
+            --r-full: 9999px;
+        }
+
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior:smooth; overflow-x:hidden; }
+
+        body {
+            font-family:'DM Sans', sans-serif;
+            color:var(--text-body);
+            background:var(--linen);
+            line-height:1.7;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            overflow-x:hidden;
+        }
+
+        ::selection { background:rgba(196,154,66,0.18); color:var(--ink); }
+        ::-webkit-scrollbar { width:5px; }
+        ::-webkit-scrollbar-track { background:var(--cream); }
+        ::-webkit-scrollbar-thumb { background:var(--gold); border-radius:10px; }
+        img { max-width:100%; display:block; }
+
+        /* ===================== NAV ===================== */
+        .topbar {
+            position:fixed; top:0; left:0; right:0; z-index:9999;
+            padding:22px 70px;
+            display:flex; justify-content:space-between; align-items:center;
+            transition:all 0.55s cubic-bezier(0.25,1,0.5,1);
+        }
+        .topbar.pinned {
+            background:rgba(251,249,244,0.88);
+            backdrop-filter:blur(28px) saturate(200%);
+            -webkit-backdrop-filter:blur(28px) saturate(200%);
+            padding:14px 70px;
+            box-shadow:0 1px 30px rgba(0,0,0,0.04);
+            border-bottom:1px solid var(--border-faint);
+        }
+        .logo-link { text-decoration:none; display:flex; align-items:baseline; gap:2px; }
+        .logo-text {
+            font-family:'Playfair Display',serif;
+            font-size:1.5rem; font-weight:700; color:var(--white);
+            transition:color 0.45s ease; letter-spacing:-0.3px;
+        }
+        .topbar.pinned .logo-text { color:var(--text-ink); }
+        .logo-accent { color:var(--gold); }
+
+        .menu { display:flex; list-style:none; gap:38px; align-items:center; }
+        .menu a {
+            text-decoration:none; font-size:0.78rem; font-weight:500;
+            letter-spacing:2.2px; text-transform:uppercase;
+            color:rgba(255,255,255,0.65); transition:all 0.35s ease;
+            position:relative; padding:4px 0;
+        }
+        .topbar.pinned .menu a { color:var(--text-quiet); }
+        .menu a::after {
+            content:''; position:absolute; bottom:-1px; left:0;
+            width:0; height:1.5px; background:var(--gold);
+            transition:width 0.4s cubic-bezier(0.25,1,0.5,1);
+        }
+        .menu a:hover { color:var(--gold); }
+        .menu a:hover::after { width:100%; }
+
+        .menu-cta {
+            padding:9px 26px !important;
+            border:1.5px solid rgba(196,154,66,0.45) !important;
+            border-radius:var(--r-full) !important;
+            letter-spacing:1.8px !important;
+        }
+        .menu-cta::after { display:none !important; }
+        .menu-cta:hover {
+            background:var(--gold) !important;
+            color:var(--ink) !important;
+            border-color:var(--gold) !important;
+        }
+
+        .burger { display:none; flex-direction:column; gap:5px; cursor:pointer; z-index:10000; padding:4px; }
+        .burger i { width:24px; height:2px; background:var(--white); border-radius:3px; transition:all 0.35s ease; display:block; }
+        .topbar.pinned .burger i { background:var(--text-ink); }
+        .burger.on i:nth-child(1) { transform:rotate(45deg) translate(4px,5px); }
+        .burger.on i:nth-child(2) { opacity:0; transform:scaleX(0); }
+        .burger.on i:nth-child(3) { transform:rotate(-45deg) translate(4px,-5px); }
+
+        /* ===================== HERO ===================== */
+        .hero {
+            min-height:100vh; display:flex; align-items:center;
+            background:var(--grad-hero); position:relative; overflow:hidden;
+            padding:140px 70px 110px;
+        }
+
+        .hero-atmosphere {
+            position:absolute; inset:0; z-index:1;
+            background:
+                radial-gradient(ellipse 700px 500px at 18% 42%, rgba(196,154,66,0.07) 0%, transparent 100%),
+                radial-gradient(ellipse 500px 600px at 82% 20%, rgba(192,135,114,0.04) 0%, transparent 100%),
+                radial-gradient(ellipse 450px 350px at 55% 90%, rgba(196,154,66,0.05) 0%, transparent 100%),
+                radial-gradient(ellipse 300px 300px at 70% 55%, rgba(139,160,136,0.03) 0%, transparent 100%);
+        }
+
+        .hero-grain {
+            position:absolute; inset:0; z-index:1; opacity:0.02;
+            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        .hero-glow {
+            position:absolute; z-index:1;
+            width:500px; height:500px; border-radius:50%;
+            filter:blur(120px); opacity:0.08;
+        }
+        .hero-glow-1 { background:var(--gold); top:5%; left:5%; animation:drift 22s ease-in-out infinite; }
+        .hero-glow-2 { background:var(--copper); top:40%; right:8%; animation:drift 26s ease-in-out infinite reverse; width:400px; height:400px; }
+        .hero-glow-3 { background:var(--gold); bottom:8%; left:35%; animation:drift 20s ease-in-out infinite 5s; width:350px; height:350px; }
+
+        @keyframes drift {
+            0%,100% { transform:translate(0,0) scale(1); }
+            30% { transform:translate(25px,-35px) scale(1.08); }
+            60% { transform:translate(-15px,20px) scale(0.95); }
+        }
+
+        .hero-motes {
+            position:absolute; inset:0; z-index:1; overflow:hidden;
+        }
+        .mote {
+            position:absolute; width:2px; height:2px; background:rgba(196,154,66,0.35);
+            border-radius:50%; animation:sparkle 5s ease-in-out infinite;
+        }
+        .mote:nth-child(1){top:10%;left:6%;animation-delay:0s}
+        .mote:nth-child(2){top:22%;left:90%;animation-delay:.7s}
+        .mote:nth-child(3){top:42%;left:13%;animation-delay:1.4s}
+        .mote:nth-child(4){top:62%;left:76%;animation-delay:2.1s}
+        .mote:nth-child(5){top:78%;left:42%;animation-delay:.3s}
+        .mote:nth-child(6){top:16%;left:52%;animation-delay:1.1s}
+        .mote:nth-child(7){top:70%;left:20%;animation-delay:1.8s}
+        .mote:nth-child(8){top:36%;left:65%;animation-delay:2.5s}
+        .mote:nth-child(9){top:88%;left:82%;animation-delay:.9s}
+        .mote:nth-child(10){top:52%;left:38%;animation-delay:3.2s}
+
+        @keyframes sparkle {
+            0%,100% { opacity:.15; transform:scale(1); }
+            50% { opacity:.7; transform:scale(2); }
+        }
+
+        .hero-row {
+            position:relative; z-index:2;
+            display:flex; align-items:center; justify-content:space-between;
+            gap:80px; max-width:1280px; width:100%; margin:0 auto;
+        }
+
+        .hero-copy { flex:1; max-width:600px; }
+
+        .hero-eyebrow {
+            display:inline-flex; align-items:center; gap:10px;
+            padding:9px 22px; border:1px solid rgba(196,154,66,0.22);
+            border-radius:var(--r-full); background:rgba(196,154,66,0.04);
+            backdrop-filter:blur(8px); margin-bottom:30px;
+            animation:slideDown .7s ease .2s both;
+        }
+        .hero-eyebrow-pip {
+            width:5px; height:5px; border-radius:50%; background:var(--gold);
+            animation:blink 2.2s ease infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:.4;transform:scale(1)} 50%{opacity:1;transform:scale(1.4)} }
+        .hero-eyebrow-label {
+            font-size:.7rem; font-weight:500; letter-spacing:3.2px;
+            text-transform:uppercase; color:var(--gold-light);
+        }
+
+        .hero-h1 {
+            font-family:'Playfair Display',serif; font-size:3.9rem; font-weight:700;
+            color:var(--white); line-height:1.12; margin-bottom:8px;
+            letter-spacing:-1px; animation:slideUp .75s ease .35s both;
+        }
+        .hero-h1 em { color:var(--gold); font-style:italic; }
+
+        .hero-byline {
+            font-family:'Cormorant Garamond',serif; font-size:1.35rem;
+            color:var(--gold-light); font-style:italic; font-weight:400;
+            letter-spacing:1px; margin-bottom:26px; opacity:.8;
+            animation:slideUp .75s ease .5s both;
+        }
+
+        .hero-p {
+            font-size:1.04rem; color:rgba(255,255,255,.55); line-height:1.9;
+            font-weight:300; margin-bottom:40px; max-width:500px;
+            animation:slideUp .75s ease .65s both;
+        }
+
+        .hero-btns {
+            display:flex; gap:14px; flex-wrap:wrap;
+            animation:slideUp .75s ease .8s both;
+        }
+
+        .btn-gold {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:16px 36px; background:var(--grad-gold);
+            color:var(--ink); font-family:'DM Sans',sans-serif;
+            font-size:.82rem; font-weight:600; letter-spacing:2px;
+            text-transform:uppercase; border:none; border-radius:var(--r-full);
+            cursor:pointer; text-decoration:none;
+            transition:all .45s cubic-bezier(.25,1,.5,1);
+            box-shadow:var(--sh-gold);
+        }
+        .btn-gold:hover { transform:translateY(-3px); box-shadow:var(--sh-gold-lg); background:var(--grad-gold-hover); }
+
+        .btn-ghost {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:16px 36px; background:transparent;
+            color:rgba(255,255,255,.6); font-family:'DM Sans',sans-serif;
+            font-size:.82rem; font-weight:500; letter-spacing:2px;
+            text-transform:uppercase; border:1.5px solid rgba(255,255,255,.12);
+            border-radius:var(--r-full); cursor:pointer; text-decoration:none;
+            transition:all .45s cubic-bezier(.25,1,.5,1);
+        }
+        .btn-ghost:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-3px); }
+
+        /* Hero Photo */
+        .hero-portrait { flex-shrink:0; position:relative; animation:slideUp .9s ease .5s both; }
+
+        .hero-frame {
+            width:370px; height:470px; border-radius:var(--r-xl);
+            overflow:hidden; position:relative;
+            border:1px solid rgba(196,154,66,0.18);
+            box-shadow:0 30px 80px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03);
+        }
+        .hero-frame img { width:100%; height:100%; object-fit:cover; }
+
+        .hero-frame-empty {
+            width:100%; height:100%;
+            background:linear-gradient(155deg, rgba(36,31,50,.95), rgba(26,23,38,.98));
+            display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
+            position:relative;
+        }
+        .hero-frame-empty::before {
+            content:''; position:absolute; inset:0;
+            background:radial-gradient(circle at 45% 35%, rgba(196,154,66,.06) 0%, transparent 55%);
+        }
+        .hero-frame-empty .frame-ico {
+            width:80px; height:80px; border-radius:50%;
+            border:1.5px solid rgba(196,154,66,.18);
+            display:flex; align-items:center; justify-content:center; position:relative; z-index:1;
+        }
+        .hero-frame-empty .frame-ico i { font-size:1.8rem; color:var(--gold); opacity:.55; }
+        .hero-frame-empty .frame-label {
+            font-family:'Cormorant Garamond',serif; font-size:.95rem;
+            color:rgba(196,154,66,.4); font-style:italic; position:relative; z-index:1;
+        }
+
+        .hero-deco-a {
+            position:absolute; top:-14px; right:-14px;
+            width:90px; height:90px;
+            border-top:2px solid rgba(196,154,66,.25);
+            border-right:2px solid rgba(196,154,66,.25);
+            border-radius:0 var(--r-lg) 0 0;
+        }
+        .hero-deco-b {
+            position:absolute; bottom:-14px; left:-14px;
+            width:90px; height:90px;
+            border-bottom:2px solid rgba(196,154,66,.25);
+            border-left:2px solid rgba(196,154,66,.25);
+            border-radius:0 0 0 var(--r-lg);
+        }
+
+        .hero-badge {
+            position:absolute; bottom:35px; left:-55px;
+            background:rgba(251,249,244,.96); backdrop-filter:blur(18px);
+            padding:18px 24px; border-radius:var(--r-md);
+            box-shadow:var(--sh-lg); display:flex; align-items:center; gap:12px;
+            animation:bob 5s ease-in-out infinite; z-index:3;
+            border:1px solid var(--border-faint);
+        }
+        @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+        .hero-badge-dot {
+            width:44px; height:44px; border-radius:50%;
+            background:var(--grad-gold); display:flex; align-items:center; justify-content:center; flex-shrink:0;
+        }
+        .hero-badge-dot i { font-size:.95rem; color:var(--ink); }
+        .hero-badge-title { font-size:.8rem; font-weight:600; color:var(--text-ink); line-height:1.35; }
+        .hero-badge-sub { font-size:.68rem; color:var(--text-quiet); font-weight:400; }
+
+        .hero-scroll {
+            position:absolute; bottom:30px; left:50%; transform:translateX(-50%);
+            z-index:2; display:flex; flex-direction:column; align-items:center; gap:7px;
+            animation:slideUp .7s ease 1.3s both;
+        }
+        .scroll-pill {
+            width:20px; height:32px; border:1.5px solid rgba(196,154,66,.3);
+            border-radius:11px; position:relative;
+        }
+        .scroll-pill::before {
+            content:''; position:absolute; top:7px; left:50%;
+            transform:translateX(-50%); width:2px; height:7px;
+            background:var(--gold); border-radius:2px;
+            animation:scrollAnim 2s ease infinite;
+        }
+        @keyframes scrollAnim { 0%{opacity:1;top:7px} 100%{opacity:0;top:20px} }
+        .scroll-word {
+            font-size:.6rem; letter-spacing:2.5px; text-transform:uppercase;
+            color:rgba(196,154,66,.35); font-weight:500;
+        }
+
+        @keyframes slideUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes slideDown { from{opacity:0;transform:translateY(-18px)} to{opacity:1;transform:translateY(0)} }
+
+        /* Hero Curve */
+        .hero-curve {
+            position:absolute; bottom:-1px; left:0; right:0; z-index:3;
+            overflow:hidden; line-height:0;
+        }
+        .hero-curve svg { display:block; width:100%; height:80px; }
+
+        /* ===================== SECTIONS SHARED ===================== */
+        .sec { padding:130px 70px; position:relative; }
+
+        .sec-label {
+            display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:16px;
+        }
+        .sec-label-bar { width:30px; height:1px; background:var(--gold); opacity:.35; }
+        .sec-label-text {
+            font-size:.7rem; font-weight:600; letter-spacing:4.5px;
+            text-transform:uppercase; color:var(--gold);
+        }
+        .sec-h2 {
+            font-family:'Playfair Display',serif; font-size:2.85rem; font-weight:700;
+            color:var(--text-ink); text-align:center; line-height:1.18;
+            margin-bottom:16px; letter-spacing:-.5px;
+        }
+        .sec-h2 em { font-style:italic; color:var(--gold); }
+        .sec-sub {
+            font-size:1.02rem; color:var(--text-quiet); text-align:center;
+            max-width:560px; margin:0 auto 72px; line-height:1.85; font-weight:300;
+        }
+        .wrap { max-width:1200px; margin:0 auto; }
+
+        /* Section Divider */
+        .sec-divider {
+            display:flex; align-items:center; justify-content:center; gap:12px;
+            padding:0 70px; position:relative; z-index:2;
+        }
+        .sec-divider-line { flex:1; max-width:200px; height:1px; background:var(--border-faint); }
+        .sec-divider-diamond {
+            width:8px; height:8px; border:1.5px solid var(--gold);
+            transform:rotate(45deg); opacity:.4; flex-shrink:0;
+        }
+
+        /* ===================== ABOUT ===================== */
+        .about-sec { background:var(--linen); }
+
+        .about-flex {
+            display:grid; grid-template-columns:1fr 1.1fr; gap:85px; align-items:center;
+        }
+
+        .about-art { position:relative; }
+
+        .about-pic {
+            width:100%; max-width:460px; height:560px;
+            border-radius:var(--r-xl); overflow:hidden;
+            box-shadow:var(--sh-xl); position:relative;
+            border:1px solid var(--border-faint);
+        }
+        .about-pic img { width:100%; height:100%; object-fit:cover; }
+
+        .about-pic-empty {
+            width:100%; height:100%;
+            background:linear-gradient(155deg, #1A1726 0%, #241F32 45%, #1A1726 100%);
+            display:flex; flex-direction:column; align-items:center;
+            justify-content:center; gap:16px; position:relative;
+        }
+        .about-pic-empty::before {
+            content:''; position:absolute; inset:0;
+            background:
+                radial-gradient(circle at 35% 30%, rgba(196,154,66,.06) 0%, transparent 50%),
+                radial-gradient(circle at 65% 70%, rgba(192,135,114,.04) 0%, transparent 50%);
+        }
+        .about-pic-empty .emp-ico {
+            width:90px; height:90px; border-radius:50%;
+            border:1.5px solid rgba(196,154,66,.18);
+            display:flex; align-items:center; justify-content:center;
+            position:relative; z-index:1;
+        }
+        .about-pic-empty .emp-ico i { font-size:2.2rem; color:var(--gold); opacity:.5; }
+        .about-pic-empty .emp-txt {
+            font-family:'Cormorant Garamond',serif; font-size:1rem;
+            color:rgba(196,154,66,.38); font-style:italic; position:relative; z-index:1;
+        }
+
+        .about-deco-tl {
+            position:absolute; top:-16px; left:-16px;
+            width:70px; height:70px;
+            border-top:2px solid var(--gold); border-left:2px solid var(--gold);
+            border-radius:var(--r-md) 0 0 0; opacity:.25;
+        }
+        .about-deco-br {
+            position:absolute; bottom:-16px; right:-16px;
+            width:70px; height:70px;
+            border-bottom:2px solid var(--gold); border-right:2px solid var(--gold);
+            border-radius:0 0 var(--r-md) 0; opacity:.25;
+        }
+
+        .about-sticker {
+            position:absolute; bottom:-22px; right:-22px;
+            background:var(--white); padding:22px 28px; border-radius:var(--r-md);
+            box-shadow:var(--sh-lg); text-align:center; z-index:3;
+            border:1px solid var(--border-faint);
+        }
+        .about-sticker-val {
+            font-family:'Playfair Display',serif; font-size:2rem;
+            font-weight:800; color:var(--gold); line-height:1;
+        }
+        .about-sticker-lbl {
+            font-size:.65rem; font-weight:600; letter-spacing:1.5px;
+            text-transform:uppercase; color:var(--text-quiet); margin-top:4px;
+        }
+
+        .about-body h3 {
+            font-family:'Playfair Display',serif; font-size:2.15rem;
+            color:var(--text-ink); line-height:1.2; margin-bottom:5px;
+        }
+        .about-role {
+            font-family:'Cormorant Garamond',serif; font-size:1.1rem;
+            color:var(--gold); font-style:italic; margin-bottom:26px; letter-spacing:.5px;
+        }
+        .about-body p {
+            font-size:.98rem; color:var(--text-body); line-height:1.9;
+            margin-bottom:16px; font-weight:300;
+        }
+        .about-callout {
+            background:var(--white); border-left:3px solid var(--gold);
+            padding:26px 30px; border-radius:0 var(--r-sm) var(--r-sm) 0;
+            margin:30px 0; box-shadow:var(--sh-xs);
+        }
+        .about-callout p {
+            font-family:'Cormorant Garamond',serif; font-size:1.25rem;
+            color:var(--text-ink); font-style:italic; line-height:1.65;
+            margin:0; font-weight:500;
+        }
+        .about-tiles {
+            display:grid; grid-template-columns:repeat(3,1fr);
+            gap:14px; margin-top:32px;
+        }
+        .about-tile {
+            text-align:center; padding:20px 14px;
+            background:var(--white); border-radius:var(--r-sm);
+            border:1px solid var(--border-faint); transition:all .4s ease;
+        }
+        .about-tile:hover { transform:translateY(-4px); box-shadow:var(--sh-sm); }
+        .about-tile-val {
+            font-family:'Playfair Display',serif; font-size:1.5rem;
+            font-weight:700; color:var(--gold);
+        }
+        .about-tile-lbl {
+            font-size:.68rem; font-weight:500; letter-spacing:1px;
+            text-transform:uppercase; color:var(--text-quiet); margin-top:3px;
+        }
+
+        /* ===================== TRUST ===================== */
+        .trust-sec { background:var(--cream); }
+
+        .trust-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+
+        .t-card {
+            background:var(--white); border-radius:var(--r-lg);
+            padding:44px 34px; position:relative; overflow:hidden;
+            border:1px solid var(--border-whisper);
+            transition:all .55s cubic-bezier(.25,1,.5,1);
+        }
+        .t-card::after {
+            content:''; position:absolute; top:0; left:0; right:0; height:3px;
+            background:var(--grad-gold); transform:scaleX(0); transform-origin:left;
+            transition:transform .55s cubic-bezier(.25,1,.5,1);
+        }
+        .t-card:hover { transform:translateY(-6px); box-shadow:var(--sh-lg); }
+        .t-card:hover::after { transform:scaleX(1); }
+
+        .t-card-ico {
+            width:62px; height:62px; border-radius:var(--r-sm);
+            background:linear-gradient(135deg, rgba(196,154,66,.06), rgba(196,154,66,.02));
+            display:flex; align-items:center; justify-content:center;
+            margin-bottom:22px; border:1px solid var(--border-faint);
+            transition:all .45s ease;
+        }
+        .t-card:hover .t-card-ico {
+            background:var(--grad-dark); border-color:transparent;
+        }
+        .t-card-ico i { font-size:1.3rem; color:var(--gold); transition:all .45s ease; }
+        .t-card:hover .t-card-ico i { color:var(--gold-light); }
+
+        .t-card h3 {
+            font-family:'Playfair Display',serif; font-size:1.22rem;
+            color:var(--text-ink); margin-bottom:12px; line-height:1.3;
+        }
+        .t-card p { font-size:.92rem; color:var(--text-quiet); line-height:1.85; font-weight:300; }
+
+        /* ===================== BENEFITS ===================== */
+        .bene-sec {
+            background:var(--grad-dark); position:relative; overflow:hidden;
+        }
+        .bene-sec::before {
+            content:''; position:absolute; inset:0;
+            background:
+                radial-gradient(ellipse 500px 400px at 8% 28%, rgba(196,154,66,.04) 0%, transparent 100%),
+                radial-gradient(ellipse 400px 500px at 92% 72%, rgba(192,135,114,.03) 0%, transparent 100%);
+        }
+        .bene-sec .sec-label-text { color:var(--gold-light); }
+        .bene-sec .sec-h2 { color:var(--white); }
+        .bene-sec .sec-h2 em { color:var(--gold); }
+        .bene-sec .sec-sub { color:rgba(255,255,255,.45); }
+
+        .bene-grid {
+            display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
+            position:relative; z-index:1;
+        }
+
+        .b-card {
+            background:rgba(255,255,255,.025); border:1px solid rgba(196,154,66,.08);
+            border-radius:var(--r-lg); padding:42px 32px;
+            transition:all .5s cubic-bezier(.25,1,.5,1); backdrop-filter:blur(4px);
+        }
+        .b-card:hover {
+            background:rgba(255,255,255,.055); border-color:rgba(196,154,66,.22);
+            transform:translateY(-5px);
+        }
+        .b-card-num {
+            font-family:'Playfair Display',serif; font-size:2.6rem;
+            font-weight:800; color:rgba(196,154,66,.12); line-height:1; margin-bottom:16px;
+        }
+        .b-card h3 {
+            font-family:'Playfair Display',serif; font-size:1.18rem;
+            color:var(--white); margin-bottom:12px; line-height:1.35;
+        }
+        .b-card p { font-size:.9rem; color:rgba(255,255,255,.48); line-height:1.85; font-weight:300; }
+        .b-card-tag {
+            display:inline-block; margin-top:16px; padding:6px 16px;
+            background:rgba(196,154,66,.08); border-radius:var(--r-full);
+            font-size:.68rem; color:var(--gold-light); font-weight:500; letter-spacing:.6px;
+        }
+
+        /* ===================== PHILOSOPHY ===================== */
+        .philo-sec {
+            background:var(--sand); padding:100px 70px; text-align:center;
+            position:relative; overflow:hidden;
+        }
+        .philo-sec::before {
+            content:''; position:absolute; inset:0;
+            background:radial-gradient(circle at center, rgba(196,154,66,.03) 0%, transparent 55%);
+        }
+        .philo-inner { max-width:740px; margin:0 auto; position:relative; z-index:1; }
+        .philo-mark {
+            font-family:'Playfair Display',serif; font-size:4.5rem;
+            color:var(--gold); opacity:.18; line-height:.5; margin-bottom:28px;
+        }
+        .philo-quote {
+            font-family:'Cormorant Garamond',serif; font-size:1.75rem;
+            color:var(--text-ink); font-style:italic; line-height:1.55;
+            margin-bottom:28px; font-weight:500;
+        }
+        .philo-bar { width:45px; height:1.5px; background:var(--gold); margin:0 auto 22px; opacity:.4; }
+        .philo-desc {
+            font-size:.98rem; color:var(--text-quiet); line-height:1.85;
+            max-width:530px; margin:0 auto; font-weight:300;
+        }
+
+        /* ===================== PROCESS ===================== */
+        .proc-sec { background:var(--linen); }
+
+        .proc-wrap { max-width:920px; margin:0 auto; position:relative; }
+
+        .proc-rail {
+            position:absolute; left:50%; top:0; bottom:0; width:1.5px;
+            background:linear-gradient(to bottom, var(--gold), var(--copper), var(--gold));
+            opacity:.15; transform:translateX(-50%);
+        }
+
+        .p-step { display:flex; align-items:flex-start; position:relative; margin-bottom:52px; }
+        .p-step:last-child { margin-bottom:0; }
+        .p-step:nth-child(even) { flex-direction:row-reverse; }
+
+        .p-step-card {
+            width:43%; background:var(--white); border-radius:var(--r-lg);
+            padding:36px 34px; box-shadow:var(--sh-sm);
+            border:1px solid var(--border-whisper); transition:all .45s ease;
+        }
+        .p-step-card:hover { box-shadow:var(--sh-md); transform:translateY(-4px); }
+        .p-step:nth-child(odd) .p-step-card { margin-right:auto; }
+        .p-step:nth-child(even) .p-step-card { margin-left:auto; }
+
+        .p-step-dot {
+            position:absolute; left:50%; transform:translateX(-50%);
+            width:50px; height:50px; border-radius:50%;
+            background:var(--grad-gold); display:flex; align-items:center; justify-content:center;
+            font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700;
+            color:var(--ink); box-shadow:var(--sh-gold); z-index:2;
+        }
+
+        .p-step-card .p-label {
+            font-size:.65rem; font-weight:600; letter-spacing:2.5px;
+            text-transform:uppercase; color:var(--gold); margin-bottom:7px;
+        }
+        .p-step-card h3 {
+            font-family:'Playfair Display',serif; font-size:1.25rem;
+            color:var(--text-ink); margin-bottom:10px; line-height:1.3;
+        }
+        .p-step-card p { font-size:.9rem; color:var(--text-quiet); line-height:1.85; font-weight:300; }
+
+        /* ===================== CTA ===================== */
+        .cta-sec {
+            background:var(--grad-hero); padding:105px 70px; text-align:center;
+            position:relative; overflow:hidden;
+        }
+        .cta-sec::before {
+            content:''; position:absolute; inset:0;
+            background:radial-gradient(ellipse at center, rgba(196,154,66,.05) 0%, transparent 55%);
+        }
+        .cta-inner { position:relative; z-index:1; max-width:650px; margin:0 auto; }
+        .cta-sec h2 {
+            font-family:'Playfair Display',serif; font-size:2.7rem;
+            color:var(--white); margin-bottom:18px; line-height:1.2;
+        }
+        .cta-sec h2 em { color:var(--gold); font-style:italic; }
+        .cta-sec p {
+            font-size:1.02rem; color:rgba(255,255,255,.55); line-height:1.85;
+            margin-bottom:38px; font-weight:300;
+        }
+
+        /* ===================== CONTACT ===================== */
+        .contact-sec { background:var(--cream); }
+
+        .contact-layout { display:grid; grid-template-columns:1fr 1.18fr; gap:55px; align-items:start; }
+
+        .contact-info h3 {
+            font-family:'Playfair Display',serif; font-size:1.9rem;
+            color:var(--text-ink); margin-bottom:14px; line-height:1.25;
+        }
+        .contact-info > p {
+            font-size:.98rem; color:var(--text-quiet); line-height:1.85;
+            margin-bottom:36px; font-weight:300;
+        }
+
+        .c-item {
+            display:flex; align-items:center; gap:16px; margin-bottom:20px;
+            padding:16px 20px; background:var(--white); border-radius:var(--r-sm);
+            border:1px solid var(--border-whisper); transition:all .35s ease;
+        }
+        .c-item:hover { box-shadow:var(--sh-sm); transform:translateX(4px); }
+
+        .c-item-ico {
+            width:46px; height:46px; border-radius:50%;
+            background:linear-gradient(135deg, rgba(196,154,66,.06), rgba(196,154,66,.02));
+            display:flex; align-items:center; justify-content:center; flex-shrink:0;
+            border:1px solid var(--border-faint);
+        }
+        .c-item-ico i { font-size:.95rem; color:var(--gold); }
+        .c-item-lbl {
+            font-size:.67rem; font-weight:600; letter-spacing:1.5px;
+            text-transform:uppercase; color:var(--text-quiet); margin-bottom:1px;
+        }
+        .c-item-val { font-size:.95rem; color:var(--text-ink); font-weight:500; }
+
+        .contact-card {
+            background:var(--white); border-radius:var(--r-xl);
+            padding:46px 44px; box-shadow:var(--sh-md);
+            border:1px solid var(--border-whisper);
+        }
+        .contact-card h3 {
+            font-family:'Playfair Display',serif; font-size:1.4rem;
+            color:var(--text-ink); margin-bottom:6px;
+        }
+        .contact-card .form-intro {
+            font-size:.88rem; color:var(--text-quiet); margin-bottom:28px; font-weight:300;
+        }
+
+        .fg { margin-bottom:18px; }
+        .fg label {
+            display:block; font-size:.8rem; font-weight:500;
+            color:var(--text-body); margin-bottom:6px; letter-spacing:.3px;
+        }
+        .fg input, .fg textarea, .fg select {
+            width:100%; padding:13px 16px;
+            border:1.5px solid rgba(0,0,0,.06); border-radius:var(--r-xs);
+            font-family:'DM Sans',sans-serif; font-size:.9rem;
+            color:var(--text-ink); background:var(--linen);
+            transition:all .3s ease; outline:none;
+        }
+        .fg input::placeholder, .fg textarea::placeholder { color:#A9A4B4; font-weight:300; }
+        .fg input:focus, .fg textarea:focus, .fg select:focus {
+            border-color:var(--gold); box-shadow:0 0 0 3px rgba(196,154,66,.07); background:var(--white);
+        }
+        .fg textarea { resize:vertical; min-height:120px; }
+        .fg select {
+            appearance:none; -webkit-appearance:none;
+            background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%238E889F' d='M5 7L0 2h10z'/%3E%3C/svg%3E");
+            background-repeat:no-repeat; background-position:right 14px center; padding-right:38px;
+        }
+        .fg-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+
+        .form-btn {
+            width:100%; padding:16px; background:var(--grad-gold);
+            color:var(--ink); font-family:'DM Sans',sans-serif;
+            font-size:.85rem; font-weight:600; letter-spacing:2px;
+            text-transform:uppercase; border:none; border-radius:var(--r-xs);
+            cursor:pointer; transition:all .4s ease; box-shadow:var(--sh-gold); margin-top:6px;
+        }
+        .form-btn:hover { transform:translateY(-2px); box-shadow:var(--sh-gold-lg); }
+
+        .form-note-sm {
+            display:flex; align-items:center; justify-content:center; gap:7px;
+            margin-top:14px; font-size:.72rem; color:var(--text-quiet);
+        }
+        .form-note-sm i { font-size:.65rem; color:var(--gold); }
+
+        /* ===================== FOOTER ===================== */
+        .footer {
+            background:var(--ink); padding:65px 70px 30px; position:relative;
+        }
+        .footer::before {
+            content:''; position:absolute; top:0; left:70px; right:70px; height:1px;
+            background:linear-gradient(90deg, transparent, rgba(196,154,66,.12), transparent);
+        }
+        .footer-grid {
+            display:flex; justify-content:space-between; gap:45px;
+            margin-bottom:50px; flex-wrap:wrap;
+        }
+        .footer-brand { max-width:320px; }
+        .footer-brand-name {
+            font-family:'Playfair Display',serif; font-size:1.4rem;
+            font-weight:700; color:var(--white); margin-bottom:12px;
+        }
+        .footer-brand-name span { color:var(--gold); }
+        .footer-brand p { font-size:.88rem; color:rgba(255,255,255,.35); line-height:1.8; font-weight:300; }
+        .footer-social { display:flex; gap:10px; margin-top:18px; }
+        .footer-social a {
+            width:38px; height:38px; border-radius:50%;
+            border:1px solid rgba(255,255,255,.08);
+            display:flex; align-items:center; justify-content:center;
+            color:rgba(255,255,255,.35); text-decoration:none; font-size:.8rem;
+            transition:all .3s ease;
+        }
+        .footer-social a:hover { border-color:var(--gold); color:var(--gold); background:rgba(196,154,66,.05); }
+
+        .footer-col h4 {
+            font-family:'Playfair Display',serif; font-size:.95rem;
+            color:var(--white); margin-bottom:16px; font-weight:600;
+        }
+        .footer-col ul { list-style:none; }
+        .footer-col ul li { margin-bottom:9px; }
+        .footer-col ul li a {
+            color:rgba(255,255,255,.35); text-decoration:none;
+            font-size:.85rem; font-weight:300; transition:all .3s ease;
+        }
+        .footer-col ul li a:hover { color:var(--gold); padding-left:3px; }
+
+        .footer-end {
+            border-top:1px solid rgba(255,255,255,.04);
+            padding-top:22px; display:flex; justify-content:space-between;
+            align-items:center; flex-wrap:wrap; gap:10px;
+        }
+        .footer-end p { font-size:.78rem; color:rgba(255,255,255,.2); font-weight:300; }
+        .footer-end p span { color:var(--gold); }
+
+        /* ===================== SCROLL REVEAL ===================== */
+        .rv { opacity:0; transform:translateY(35px); transition:all .85s cubic-bezier(.25,1,.5,1); }
+        .rv.on { opacity:1; transform:translateY(0); }
+        .rv-l { opacity:0; transform:translateX(-45px); transition:all .85s cubic-bezier(.25,1,.5,1); }
+        .rv-l.on { opacity:1; transform:translateX(0); }
+        .rv-r { opacity:0; transform:translateX(45px); transition:all .85s cubic-bezier(.25,1,.5,1); }
+        .rv-r.on { opacity:1; transform:translateX(0); }
+        .rv-s { opacity:0; transform:scale(.93); transition:all .85s cubic-bezier(.25,1,.5,1); }
+        .rv-s.on { opacity:1; transform:scale(1); }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media(max-width:1080px) {
+            .sec { padding:100px 36px; }
+            .hero { padding:120px 36px 90px; }
+            .topbar,.topbar.pinned { padding-left:36px; padding-right:36px; }
+            .hero-h1 { font-size:3rem; }
+            .about-flex { grid-template-columns:1fr; gap:45px; }
+            .about-pic { max-width:420px; height:480px; margin:0 auto; }
+            .about-sticker { right:5px; }
+            .bene-grid { grid-template-columns:repeat(2,1fr); }
+            .hero-row { flex-direction:column; text-align:center; gap:50px; }
+            .hero-copy { max-width:100%; }
+            .hero-p { margin-left:auto; margin-right:auto; }
+            .hero-btns { justify-content:center; }
+            .hero-frame { width:300px; height:380px; margin:0 auto; }
+            .hero-badge { left:auto; right:-15px; bottom:20px; }
+            .footer { padding:55px 36px 25px; }
+            .footer::before { left:36px; right:36px; }
+            .philo-sec { padding:85px 36px; }
+            .cta-sec { padding:90px 36px; }
+            .sec-divider { padding:0 36px; }
+        }
+
+        @media(max-width:768px) {
+            .topbar,.topbar.pinned { padding:16px 22px; }
+            .menu {
+                display:none; position:fixed; inset:0;
+                background:rgba(19,17,28,.97); backdrop-filter:blur(25px);
+                flex-direction:column; align-items:center; justify-content:center;
+                gap:26px; z-index:9998;
+            }
+            .menu.show { display:flex; }
+            .menu a { color:rgba(255,255,255,.65) !important; font-size:.95rem; letter-spacing:2.5px; }
+            .burger { display:flex; }
+            .hero { padding:105px 22px 65px; }
+            .hero-h1 { font-size:2.15rem; letter-spacing:-.5px; }
+            .hero-byline { font-size:1.05rem; }
+            .hero-p { font-size:.92rem; }
+            .hero-frame { width:240px; height:310px; }
+            .hero-badge { display:none; }
+            .hero-scroll { display:none; }
+            .hero-deco-a,.hero-deco-b { width:60px; height:60px; }
+            .sec { padding:75px 22px; }
+            .sec-h2 { font-size:2rem; }
+            .sec-sub { font-size:.92rem; margin-bottom:55px; }
+            .about-pic { height:380px; max-width:380px; }
+            .about-body h3 { font-size:1.7rem; }
+            .about-callout p { font-size:1.1rem; }
+            .about-sticker { position:relative; bottom:auto; right:auto; margin-top:18px; display:inline-block; }
+            .trust-grid { grid-template-columns:1fr; gap:18px; }
+            .t-card { padding:36px 28px; }
+            .bene-grid { grid-template-columns:1fr; }
+            .b-card { padding:34px 26px; }
+            .philo-sec { padding:65px 22px; }
+            .philo-quote { font-size:1.35rem; }
+            .proc-rail { left:24px; }
+            .p-step,.p-step:nth-child(even) { flex-direction:column; padding-left:60px; }
+            .p-step-card { width:100% !important; }
+            .p-step-dot { left:24px; width:42px; height:42px; font-size:.95rem; }
+            .cta-sec { padding:70px 22px; }
+            .cta-sec h2 { font-size:1.9rem; }
+            .contact-layout { grid-template-columns:1fr; gap:30px; }
+            .contact-card { padding:32px 24px; }
+            .fg-row { grid-template-columns:1fr; }
+            .footer { padding:45px 22px 20px; }
+            .footer::before { left:22px; right:22px; }
+            .footer-grid { flex-direction:column; gap:30px; }
+            .sec-divider { padding:0 22px; }
+            .hero-curve svg { height:50px; }
+        }
+
+        @media(max-width:480px) {
+            .hero-h1 { font-size:1.8rem; }
+            .hero-eyebrow { font-size:.6rem; padding:7px 16px; }
+            .hero-frame { width:210px; height:270px; }
+            .hero-deco-a,.hero-deco-b { display:none; }
+            .sec-h2 { font-size:1.65rem; }
+            .about-body h3 { font-size:1.4rem; }
+            .about-tiles { grid-template-columns:repeat(3,1fr); gap:8px; }
+            .about-tile { padding:15px 8px; }
+            .about-tile-val { font-size:1.2rem; }
+            .about-tile-lbl { font-size:.6rem; }
+            .btn-gold,.btn-ghost { padding:14px 28px; font-size:.78rem; width:100%; justify-content:center; }
+            .about-deco-tl,.about-deco-br { display:none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAV ========== -->
+    <nav class="topbar" id="topbar">
+        <a href="#home" class="logo-link">
+            <span class="logo-text">Maria<span class="logo-accent">.</span></span>
+        </a>
+        <ul class="menu" id="menu">
+            <li><a href="#home" onclick="shut()">Home</a></li>
+            <li><a href="#about" onclick="shut()">About Me</a></li>
+            <li><a href="#trust" onclick="shut()">Why Trust Me</a></li>
+            <li><a href="#benefits" onclick="shut()">What You Get</a></li>
+            <li><a href="#process" onclick="shut()">The Process</a></li>
+            <li><a href="#contact" class="menu-cta" onclick="shut()">Contact</a></li>
+        </ul>
+        <div class="burger" id="burger" onclick="toggle()">
+            <i></i><i></i><i></i>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+        <div class="hero-atmosphere"></div>
+        <div class="hero-grain"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-glow hero-glow-3"></div>
+        <div class="hero-motes">
+            <div class="mote"></div><div class="mote"></div><div class="mote"></div>
+            <div class="mote"></div><div class="mote"></div><div class="mote"></div>
+            <div class="mote"></div><div class="mote"></div><div class="mote"></div>
+            <div class="mote"></div>
+        </div>
+
+        <div class="hero-row">
+            <div class="hero-copy">
+                <div class="hero-eyebrow">
+                    <span class="hero-eyebrow-pip"></span>
+                    <span class="hero-eyebrow-label">Author visibility Specialist</span>
+                </div>
+                <h1 class="hero-h1">Your Book Deserves<br>Readers Who <em>Truly Care</em></h1>
+                <p class="hero-byline">Maria Jane Clark</p>
+                <p class="hero-p">I connect meaningful books with engaged reader communities who value thoughtful conversation over surface-level promotion. Your book wasn't written to be scrolled past. It was written to be discussed, felt, and remembered.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-gold">Start The Conversation</a>
+                    <a href="#about" class="btn-ghost">Learn More</a>
+                </div>
+            </div>
+
+            <div class="hero-portrait">
+                <div class="hero-deco-a"></div>
+                <div class="hero-deco-b"></div>
+                <div class="hero-frame">
+                    <!-- PHOTO 1: Replace the div below with <img src="your-hero-photo.jpg" alt="Maria Jane Clark"> -->
+                    <img src="22222.jpg" alt="Maria Jane Clark">
+                </div>
+                <div class="hero-badge">
+                    <div class="hero-badge-dot"><i class="fas fa-book-open-reader"></i></div>
+                    <div>
+                        <div class="hero-badge-title">Curated Discussion Tours</div>
+                        <div class="hero-badge-sub">Real Readers. Real Conversations.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="scroll-pill"></div>
+            <span class="scroll-word">Discover</span>
+        </div>
+
+        <div class="hero-curve">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="var(--linen)">
+                <path d="M0,80 L0,40 Q360,0 720,40 Q1080,80 1440,40 L1440,80 Z"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="sec about-sec" id="about">
+        <div class="sec-label">
+            <span class="sec-label-bar"></span>
+            <span class="sec-label-text">About Me</span>
+            <span class="sec-label-bar"></span>
+        </div>
+        <h2 class="sec-h2">The Person Behind <em>Your Book's Journey</em></h2>
+        <p class="sec-sub">Not an agency. Not an algorithm. A real person who genuinely cares about connecting the right books with the right readers.</p>
+
+        <div class="wrap">
+            <div class="about-flex">
+                <div class="about-art rv-l">
+                    <div class="about-deco-tl"></div>
+                    <div class="about-deco-br"></div>
+                    <div class="about-pic">
+                        <!-- PHOTO 2: Replace the div below with <img src="your-about-photo.jpg" alt="Maria Jane Clark"> -->
+                        <img src="22222.jpg" alt="Maria Jane Clark">
+                    </div>
+                    <div class="about-sticker">
+                        <div class="about-sticker-val">100%</div>
+                        <div class="about-sticker-lbl">Personalized</div>
+                    </div>
+                </div>
+
+                <div class="about-body rv-r">
+                    <h3>Maria Jane Clark</h3>
+                    <p class="about-role">Author visibility Specialist</p>
+                    <p>I believe every book carries a conversation waiting to happen. My work isn't about pushing promotions or chasing algorithms. It's about finding the readers who will truly connect with your words and creating the space for that connection to unfold naturally.</p>
+                    <p>Before I ever reach out to an author, I research their book individually. I study the reviews, the positioning, the reader sentiment, the discovery signals. I look for what's working and, more importantly, what's quietly limiting the book's reach. Then I craft a strategy built around what that specific book actually needs.</p>
+                    <p>I curate author visibility strategies that bring your book into communities of engaged, thoughtful readers who don't just read. They discuss, recommend, and carry your story forward long after the last page.</p>
+                    <div class="about-callout">
+                        <p>"Thoughtful conversation is the most powerful form of book promotion that exists. Readers who discuss your book become its most genuine advocates."</p>
+                    </div>
+                    <div class="about-tiles">
+                        <div class="about-tile">
+                            <div class="about-tile-val">1:1</div>
+                            <div class="about-tile-lbl">Personal Touch</div>
+                        </div>
+                        <div class="about-tile">
+                            <div class="about-tile-val">Deep</div>
+                            <div class="about-tile-lbl">Research First</div>
+                        </div>
+                        <div class="about-tile">
+                            <div class="about-tile-val">Real</div>
+                            <div class="about-tile-lbl">Engagement</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="sec-divider">
+        <span class="sec-divider-line"></span>
+        <span class="sec-divider-diamond"></span>
+        <span class="sec-divider-line"></span>
+    </div>
+
+    <!-- ========== TRUST ========== -->
+    <section class="sec trust-sec" id="trust">
+        <div class="sec-label">
+            <span class="sec-label-bar"></span>
+            <span class="sec-label-text">Why Trust Me</span>
+            <span class="sec-label-bar"></span>
+        </div>
+        <h2 class="sec-h2">What Makes This <em>Different</em></h2>
+        <p class="sec-sub">In a world full of generic book promotion, here's why authors choose to work with me and why the results speak for themselves.</p>
+
+        <div class="wrap">
+            <div class="trust-grid">
+                <div class="t-card rv">
+                    <div class="t-card-ico"><i class="fas fa-microscope"></i></div>
+                    <h3>Deep, Individual Research</h3>
+                    <p>I never use templates or generic strategies. Before I ever contact an author, I individually research their book using real, observable data. I analyze ratings, review velocity, bestseller rank, category placement, pricing, reader sentiment, and more. Every insight I share is based on what I actually found.</p>
+                </div>
+                <div class="t-card rv">
+                    <div class="t-card-ico"><i class="fas fa-heart"></i></div>
+                    <h3>Genuine, Human Approach</h3>
+                    <p>My outreach and my process feel personal because they are personal. I write to authors the way I'd want to be written to: with warmth, respect, emotional intelligence, and honesty. No corporate tone. No hype. No exaggerated claims. No fake flattery. Just calm, thoughtful, real communication.</p>
+                </div>
+                <div class="t-card rv">
+                    <div class="t-card-ico"><i class="fas fa-comments"></i></div>
+                    <h3>Conversation Over Promotion</h3>
+                    <p>Most book marketing is transactional. A post here, a review there, then silence. These author visibility strategies are different because they create sustained, meaningful conversations around your book. Readers don't just see your book. They engage with it, talk about it, and recommend it genuinely.</p>
+                </div>
+                <div class="t-card rv">
+                    <div class="t-card-ico"><i class="fas fa-bullseye"></i></div>
+                    <h3>Real Problem Identification</h3>
+                    <p>I don't just promote your book blindly. I identify the 2 to 3 real, specific discovery or positioning challenges currently limiting your book's reach. Then I explain why those challenges matter and present practical, actionable solutions so you understand exactly what's happening.</p>
+                </div>
+                <div class="t-card rv">
+                    <div class="t-card-ico"><i class="fas fa-users"></i></div>
+                    <h3>Engaged Reader Communities</h3>
+                    <p>I connect your book with communities of readers who actively want to discuss what they read. These aren't passive audiences. They're book clubs, discussion groups, and engaged reading circles where thoughtful conversation is the culture. Your book enters spaces where it's truly appreciated.</p>
+                </div>
+                <div class="t-card rv">
+                    <div class="t-card-ico"><i class="fas fa-seedling"></i></div>
+                    <h3>Long-Term Momentum</h3>
+                    <p>Author visibility Strategies doesn't create a single spike and then disappear. It builds sustained word-of-mouth momentum that helps your book stay in circulation longer. Readers who discuss your book become advocates who carry it forward, creating a ripple effect that keeps growing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BENEFITS ========== -->
+    <section class="sec bene-sec" id="benefits">
+        <div class="sec-label">
+            <span class="sec-label-bar"></span>
+            <span class="sec-label-text">What You Get</span>
+            <span class="sec-label-bar"></span>
+        </div>
+        <h2 class="sec-h2">Everything Your Book <em>Receives</em></h2>
+        <p class="sec-sub">A clear, comprehensive look at what's included when you work with me on a Author Vibility Strategies.</p>
+
+        <div class="wrap">
+            <div class="bene-grid">
+                <div class="b-card rv">
+                    <div class="b-card-num">01</div>
+                    <h3>Individual Book Research & Analysis</h3>
+                    <p>Your book is researched independently using real, observable signals. I analyze your rating and review count, review velocity, publication timing, bestseller rank, category placement, genre positioning, reader sentiment, cover and branding signals, series structure, and pricing. Nothing is guessed.</p>
+                    <span class="b-card-tag">Data-Driven, Never Generic</span>
+                </div>
+                <div class="b-card rv">
+                    <div class="b-card-num">02</div>
+                    <h3>Discovery Gap Identification</h3>
+                    <p>I identify 2 to 3 genuine, specific challenges currently limiting your book's discoverability. These aren't generic problems from a template. They're real issues I found through careful analysis. Each challenge comes with a clear explanation of why it matters and what it's costing you.</p>
+                    <span class="b-card-tag">Honest, Specific Insights</span>
+                </div>
+                <div class="b-card rv">
+                    <div class="b-card-num">03</div>
+                    <h3>Practical, Actionable Solutions</h3>
+                    <p>For every challenge identified, I provide a clear solution: what could be adjusted, why it would help, and exactly how the Author visibility Strategies addresses that specific issue. Everything is mapped out with clarity and purpose so you can move forward with confidence.</p>
+                    <span class="b-card-tag">Clear Path Forward</span>
+                </div>
+                <div class="b-card rv">
+                    <div class="b-card-num">04</div>
+                    <h3>Author visibility Specialist</h3>
+                    <p>Your book is placed into carefully selected reader communities who value thoughtful conversation. This creates sustained engagement, increases word-of-mouth momentum, helps your book stay in circulation longer, and builds deeper emotional reader attachment that lasts.</p>
+                    <span class="b-card-tag">Meaningful Reader Connection</span>
+                </div>
+                <div class="b-card rv">
+                    <div class="b-card-num">05</div>
+                    <h3>Word-of-Mouth Momentum</h3>
+                    <p>The most powerful force in book marketing isn't an ad. It's one reader telling another, "You have to read this." Author visibility Strategies create exactly this dynamic, igniting organic recommendations that continue spreading naturally long after the tour concludes.</p>
+                    <span class="b-card-tag">Organic, Lasting Growth</span>
+                </div>
+                <div class="b-card rv">
+                    <div class="b-card-num">06</div>
+                    <h3>Deeper Emotional Reader Attachment</h3>
+                    <p>When readers discuss a book, they form a deeper bond with it. They remember it longer. They recommend it more passionately. They become emotionally invested. These Author visibility Strategies get your book felt, remembered, and championed by real readers who genuinely care.</p>
+                    <span class="b-card-tag">Readers Become Advocates</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PHILOSOPHY ========== -->
+    <section class="philo-sec">
+        <div class="philo-inner rv-s">
+            <div class="philo-mark">"</div>
+            <p class="philo-quote">I don't believe in surface-level promotion. I believe in placing your book into the hands and conversations of readers who will genuinely appreciate what you've created. That's not marketing. That's matchmaking.</p>
+            <div class="philo-bar"></div>
+            <p class="philo-desc">Every outreach email I write, every tour I curate, every strategy I build starts from the same place: real research, real attention, and a real desire to help your book find the readers it deserves.</p>
+        </div>
+    </section>
+
+    <!-- ========== PROCESS ========== -->
+    <section class="sec proc-sec" id="process">
+        <div class="sec-label">
+            <span class="sec-label-bar"></span>
+            <span class="sec-label-text">The Process</span>
+            <span class="sec-label-bar"></span>
+        </div>
+        <h2 class="sec-h2">How We Work <em>Together</em></h2>
+        <p class="sec-sub">A clear, step-by-step walkthrough of how an Author visibility Strategy comes to life for your book.</p>
+
+        <div class="wrap">
+            <div class="proc-wrap">
+                <div class="proc-rail"></div>
+
+                <div class="p-step rv">
+                    <div class="p-step-dot">1</div>
+                    <div class="p-step-card">
+                        <div class="p-label">Discovery</div>
+                        <h3>You Reach Out</h3>
+                        <p>It starts with a simple conversation. You reply to my outreach with "I am interested" or "Send more details," or you contact me directly through this website. There's no pressure and no commitment at this stage. We're just opening the door.</p>
+                    </div>
+                </div>
+
+                <div class="p-step rv">
+                    <div class="p-step-dot">2</div>
+                    <div class="p-step-card">
+                        <div class="p-label">Deep Research</div>
+                        <h3>I Study Your Book Individually</h3>
+                        <p>I conduct thorough, individual research on your book using real, observable data. I look at your ratings, reviews, review velocity, bestseller rank, category placement, reader sentiment, pricing, cover signals, genre positioning, and more. This is built entirely around your book.</p>
+                    </div>
+                </div>
+
+                <div class="p-step rv">
+                    <div class="p-step-dot">3</div>
+                    <div class="p-step-card">
+                        <div class="p-label">Insight Sharing</div>
+                        <h3>I Share What I Found</h3>
+                        <p>I present 2 to 3 genuine discovery or positioning challenges your book is currently facing. Each one is explained clearly: what it is, why it matters, and what it's costing your book. No drama. No scare tactics. Just honest, useful insight.</p>
+                    </div>
+                </div>
+
+                <div class="p-step rv">
+                    <div class="p-step-dot">4</div>
+                    <div class="p-step-card">
+                        <div class="p-label">Strategy</div>
+                        <h3>We Build The Plan Together</h3>
+                        <p>For each challenge, I explain what could be adjusted, why it would help, and how the Author visibility Strategies specifically solves it. We align on the approach that makes the most sense for your book, your goals, and your readers. Everything is transparent.</p>
+                    </div>
+                </div>
+
+                <div class="p-step rv">
+                    <div class="p-step-dot">5</div>
+                    <div class="p-step-card">
+                        <div class="p-label">Curation</div>
+                        <h3>I Curate Your Discussion Tour</h3>
+                        <p>I carefully select the reader communities that are the best fit for your book. These are engaged, thoughtful groups where meaningful conversation is the norm. Your book is introduced into these spaces with care and intention.</p>
+                    </div>
+                </div>
+
+                <div class="p-step rv">
+                    <div class="p-step-dot">6</div>
+                    <div class="p-step-card">
+                        <div class="p-label">Momentum</div>
+                        <h3>Your Book Enters The Conversation</h3>
+                        <p>Readers engage with your book. Discussions happen. Word-of-mouth builds. Your book gains sustained momentum, stays in circulation longer, and develops the kind of deep emotional attachment that turns casual readers into genuine advocates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta-sec">
+        <div class="cta-inner rv-s">
+            <h2>Ready to Give Your Book<br>The <em>Conversation It Deserves?</em></h2>
+            <p>Your book was written to be more than scrolled past. Let's put it in front of readers who will truly engage with it, discuss it, and carry it forward into the world.</p>
+            <a href="#contact" class="btn-gold">Let's Talk About Your Book</a>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="sec contact-sec" id="contact">
+        <div class="sec-label">
+            <span class="sec-label-bar"></span>
+            <span class="sec-label-text">Contact</span>
+            <span class="sec-label-bar"></span>
+        </div>
+        <h2 class="sec-h2">Start The <em>Conversation</em></h2>
+        <p class="sec-sub">Whether you're curious, ready to begin, or just want to learn more, I'd love to hear from you.</p>
+
+        <div class="wrap">
+            <div class="contact-layout">
+                <div class="contact-info rv-l">
+                    <h3>Let's Talk About Your Book</h3>
+                    <p>There's no pressure and no commitment when you reach out. Simply tell me about your book and what you're hoping to achieve. I'll take it from there with the same care and attention I bring to everything I do.</p>
+
+                    <div class="c-item">
+                        <div class="c-item-ico"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <div class="c-item-lbl">Email</div>
+                            <div class="c-item-val">mariajaneclark3@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-item-ico"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <div class="c-item-lbl">Response Time</div>
+                            <div class="c-item-val">Within 24 to 48 Hours</div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-item-ico"><i class="fas fa-globe"></i></div>
+                        <div>
+                            <div class="c-item-lbl">Working With</div>
+                            <div class="c-item-val">Authors Worldwide</div>
+                        </div>
+                    </div>
+                    <div class="c-item">
+                        <div class="c-item-ico"><i class="fas fa-handshake"></i></div>
+                        <div>
+                            <div class="c-item-lbl">Approach</div>
+                            <div class="c-item-val">Personal, One-on-One</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-card rv-r">
+                    <h3>Send Me a Message</h3>
+                    <p class="form-intro">Fill out the form below and your message comes directly to me.</p>
+
+                    <form action="https://formspree.io/f/xaqpqkpg" method="POST" id="contactForm">
+                        <div class="fg-row">
+                            <div class="fg">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+                            </div>
+                            <div class="fg">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                            </div>
+                        </div>
+                        <div class="fg">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="fg">
+                            <label for="bookTitle">Your Book Title</label>
+                            <input type="text" id="bookTitle" name="bookTitle" placeholder="The title of your book" required>
+                        </div>
+                        <div class="fg-row">
+                            <div class="fg">
+                                <label for="genre">Genre / Category</label>
+                                <select id="genre" name="genre" required>
+                                    <option value="" disabled selected>Select genre</option>
+                                    <option value="Literary Fiction">Literary Fiction</option>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Mystery / Thriller">Mystery / Thriller</option>
+                                    <option value="Science Fiction">Science Fiction</option>
+                                    <option value="Fantasy">Fantasy</option>
+                                    <option value="Historical Fiction">Historical Fiction</option>
+                                    <option value="Memoir">Memoir</option>
+                                    <option value="Self Help">Self Help</option>
+                                    <option value="Nonfiction">Nonfiction</option>
+                                    <option value="Young Adult">Young Adult</option>
+                                    <option value="Poetry">Poetry</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="fg">
+                                <label for="bookLink">Book Link (Optional)</label>
+                                <input type="url" id="bookLink" name="bookLink" placeholder="Amazon or Goodreads link">
+                            </div>
+                        </div>
+                        <div class="fg">
+                            <label for="message">Tell Me About Your Book</label>
+                            <textarea id="message" name="message" placeholder="Share a brief description of your book and what you're hoping to achieve. I'd love to learn more about your work." required></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="New Author visibility Strategies Inquiry">
+                        <input type="hidden" name="_template" value="table">
+                        <button type="submit" class="form-btn" id="submitBtn">Send Message</button>
+                        <div class="form-note-sm">
+                            <i class="fas fa-lock"></i>
+                            <span>Your information is private and never shared.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">Maria<span>.</span></div>
+                    <p>Curating Book Discussion Tours that connect meaningful books with engaged reader communities who value thoughtful conversation over surface-level promotion.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Goodreads"><i class="fab fa-goodreads-g"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#trust">Why Trust Me</a></li>
+                        <li><a href="#benefits">What You Get</a></li>
+                        <li><a href="#process">The Process</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#benefits">Author visibility Strategies</a></li>
+                        <li><a href="#process">Discovery Research</a></li>
+                        <li><a href="#benefits">Reader Community Placement</a></li>
+                        <li><a href="#benefits">Word-of-Mouth Strategy</a></li>
+                        <li><a href="#contact">Custom Consultation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-end">
+                <p>&copy; 2025 <span>Maria Jane Clark</span>. All rights reserved.</p>
+                <p>Crafted with intention for authors who deserve more.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const bar=document.getElementById('topbar'),mn=document.getElementById('menu'),bg=document.getElementById('burger');
+        window.addEventListener('scroll',()=>{bar.classList.toggle('pinned',scrollY>55)});
+        function toggle(){mn.classList.toggle('show');bg.classList.toggle('on')}
+        function shut(){mn.classList.remove('show');bg.classList.remove('on')}
+
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{
+            a.addEventListener('click',function(e){
+                e.preventDefault();
+                const t=document.querySelector(this.getAttribute('href'));
+                if(t){window.scrollTo({top:t.getBoundingClientRect().top+pageYOffset-70,behavior:'smooth'})}
+            });
+        });
+
+        const io=new IntersectionObserver((es)=>{
+            es.forEach((e,i)=>{
+                if(e.isIntersecting){
+                    setTimeout(()=>e.target.classList.add('on'),i*70);
+                    io.unobserve(e.target);
+                }
+            });
+        },{threshold:.1,rootMargin:'0px 0px -35px 0px'});
+        document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s').forEach(el=>io.observe(el));
+
+        const cf=document.getElementById('contactForm'),sb=document.getElementById('submitBtn');
+        cf.addEventListener('submit',function(e){
+            e.preventDefault();
+            const orig=sb.textContent;
+            sb.textContent='Sending...';sb.style.opacity='.65';sb.disabled=true;
+            fetch(cf.action,{method:'POST',body:new FormData(cf),headers:{'Accept':'application/json'}})
+            .then(r=>{
+                if(r.ok){
+                    sb.textContent='Message Sent Successfully!';
+                    sb.style.background='linear-gradient(135deg,#13111C,#1C1928)';
+                    sb.style.color='#C49A42';sb.style.opacity='1';cf.reset();
+                    setTimeout(()=>{sb.textContent=orig;sb.style.background='';sb.style.color='';sb.disabled=false},4500);
+                } else {
+                    sb.textContent='Something went wrong. Try again.';sb.style.opacity='1';sb.disabled=false;
+                    setTimeout(()=>{sb.textContent=orig},3500);
+                }
+            }).catch(()=>{
+                sb.textContent='Connection error. Try again.';sb.style.opacity='1';sb.disabled=false;
+                setTimeout(()=>{sb.textContent=orig},3500);
+            });
+        });
+
+        window.addEventListener('scroll',()=>{
+            const s=pageYOffset,h=document.querySelector('.hero-row');
+            if(h&&s<innerHeight){h.style.transform=`translateY(${s*.08}px)`;h.style.opacity=Math.max(1-s*.0012,0)}
+        });
+    </script>
+
+</body>
+</html>
